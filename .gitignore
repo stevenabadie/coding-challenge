@@ -3,6 +3,10 @@
 /out/
 
 node_modules
+
+# database
+*.db
+
 # Keep environment variables out of version control
 .env
 

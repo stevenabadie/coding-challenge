@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// There are additional fields in the provided example data. Should any of those additional fields
+// also be added to the Report model?
+model Report {
+  id                String      @id
+  reportType        String
+  reportState       String      @default("OPEN")
+  blockState        Boolean     @default(false)
+  message           String?
+  createdAt         DateTime    @default(now())
+}
