@@ -5,7 +5,7 @@ The purpose of this test is to see how you approach problems as well as to evalu
 
 ## Challenge description
 
-This challenge imagines that we have a social media platform that is under attack from spam. We have implemented a reporting system for users that lets them report spam to the platform, and our spam protection team.  
+This challenge imagines that we have a social media platform that is under attack from spam. We have implemented a reporting system for users that lets them report spam to the platform, and our spam protection team.
 
 The challenge is to create a small full stack application for our spam protection team that consists of a server and a web based UI in order to manage reported content.
 
@@ -17,17 +17,32 @@ We provide an example listing response ([`data/reports.json`](data/reports.json)
 
 Furthermore we need a way to _block_ the content and _resolve_ those reports. The two buttons in the UI should do a call to your backend service in order to block the content or to resolve the ticket. You are free to implement the blocking as you want, however the resolving should be defined as a `PUT` request to an endpoint with this structure `/reports/:reportId`. An example request for how to update a report is in [`data/update_ticket_request.json`](data/update_ticket_request.json).
 
-
 - **`Block`:** Means that the content should no longer be available to users
 - **`Resolve`:** Means that the report is considered "resolved", and it is no longer visible to the spam protection team
 - **`Details`:** Functionality can be ignored.
 
 ## Instructions
+
 - Please don't spend more than **3 hours**.
 - Choose whatever frameworks you are comfortable with and that lets you achieve a solution in the given time limit. Please nothing too esoteric. We prefer Java, Ruby, Node.js, Python or Elixir.
 - Provide the solution source code either as zip or as a link to the code repository
 
 ## What we're looking for:
+
 - Code quality
 - Technical choices
 - A runnable full-stack application
+
+## Challenge answer details
+
+This challenge was completed using Next.js for the front-end and API. The simple styling was completed with TailwindCSS. The database is managed with Prisma ORM, configured for SQLite in this exercise.
+
+To set up the project:
+
+1. Make a copy of the example environment file `cp example.env .env`
+2. Install the libraries `yarn install`
+3. Sync the Prisma schema with the database`npx prisma db push`
+4. Generate the Prisma client `npx prisma generate`
+5. Seed the database with the example data `npx prisma db seed`
+6. Start the development server `npm run dev`
+7. You can also view the data live in Prisma Studio with `npx prisma studio`
